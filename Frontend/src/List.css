@@ -1,0 +1,82 @@
+
+.filter-options {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+
+.filter-options label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+
+.filter-options input[type="text"],
+.filter-options input[type="date"] {
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.filter-options button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.filter-options button:hover {
+    background-color: #0056b3;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+}
+
+.card p {
+    margin: 5px 0;
+}
+
+.Link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Link a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.Link button {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.filterapply{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.Link button:hover {
+    background-color: #b30000;
+}
