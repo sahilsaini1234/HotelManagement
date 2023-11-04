@@ -14,7 +14,7 @@ CORS(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/hotel' 
 
 db=SQLAlchemy(app)
-# Define the Room and Booking models
+
 class Room(db.Model):
     __tablename__ = 'rooms'
     id = db.Column(db.Integer, primary_key=True)
@@ -32,10 +32,10 @@ class Booking(db.Model):
     end_time = db.Column(db.DateTime, nullable=False)
     total_price = db.Column(db.Float, nullable=False)
 
-engine = create_engine('mysql://root:@localhost/hotel')  # Replace with your MySQL connection details
+engine = create_engine('mysql://root:@localhost/hotel') 
 Session = sessionmaker(bind=engine)
 
-# API endpoint to create a booking
+
 @app.route('/bookings/create', methods=['GET','POST'])
 def create_booking():
     data = request.json
@@ -60,7 +60,7 @@ def create_booking():
     total_price = duration_hours * room.price_per_hour
 
     booking = Booking(user_email=user_email, room=room, start_time=start_time, end_time=end_time, total_price=total_price)
-    room.availability = False  # Mark the room as booked
+    room.availability = False  
 
     session.add(booking)
     session.commit()
@@ -68,7 +68,6 @@ def create_booking():
 
     return jsonify({'success': True, 'message': 'Booking created successfully'})
 
-# Function to check for overlapping bookings
 def overlap_exists(session, room_id, start_time, end_time):
     overlap_booking = session.query(Booking).filter(
         Booking.room_id == room_id,
@@ -87,7 +86,7 @@ def overlap_exists_edit(session, room_id, start_time, end_time, booking_id):
     ).first()
     return overlap_booking is not None
 
-# API endpoint to edit a booking
+
 @app.route('/bookings/edit/<int:booking_id>', methods=['PUT'])
 def edit_booking(booking_id):
     data = request.json
