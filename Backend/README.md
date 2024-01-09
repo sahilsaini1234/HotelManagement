@@ -64,8 +64,8 @@ The Hotel Booking Backend provides the following API endpoints:
 Assumptions
 
 # 3 Types of Rooms are there  (A,B,C)
-# A=500 
-# B=200
+# A=500,
+# B=200,
 # C=100
 # ONLY ADMIN VIEW IS CREATED
 
