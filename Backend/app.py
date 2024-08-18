@@ -11,7 +11,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/hotel' 
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/hotels' 
 
 db=SQLAlchemy(app)
 
@@ -32,7 +32,7 @@ class Booking(db.Model):
     end_time = db.Column(db.DateTime, nullable=False)
     total_price = db.Column(db.Float, nullable=False)
 
-engine = create_engine('mysql://root:@localhost/hotel') 
+engine = create_engine('mysql://root:@localhost/hotels') 
 Session = sessionmaker(bind=engine)
 
 

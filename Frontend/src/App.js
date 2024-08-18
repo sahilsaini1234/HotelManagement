@@ -23,7 +23,7 @@ function BookingForm() {
     e.preventDefault();
 
     if (bookingId) {
-      fetch(`http://127.0.0.1:5000/bookings/edit/${bookingId}`, {
+      fetch(`http://127.0.0.1:8000/bookings/edit/${bookingId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ function BookingForm() {
         });
     } else {
 
-      fetch('http://127.0.0.1:5000/bookings/create', {
+      fetch('http://127.0.0.1:8000/bookings/create/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

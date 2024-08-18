@@ -17,7 +17,7 @@ function BookingList() {
 
   const fetchData = async () => {
     const queryParams = new URLSearchParams(filters).toString();
-    await fetch(`http://127.0.0.1:5000/bookings/view?${queryParams}`)
+    await fetch(`http://127.0.0.1:8000/bookings/view?${queryParams}`)
       .then((response) => response.json())
       .then((data) => setBookings(data.bookings));
   }
@@ -40,7 +40,7 @@ function BookingList() {
   }
 
   const handleDelete = async (bookingId) => {
-    await fetch(`http://127.0.0.1:5000/bookings/cancel/${bookingId}`, {
+    await fetch(`http://127.0.0.1:8000/bookings/cancel/${bookingId}`, {
       method: 'DELETE',
     }).then((response)=>response.json())
     .then((data)=>{
